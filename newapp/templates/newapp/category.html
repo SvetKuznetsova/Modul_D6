@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+
+{% if category.id %}
+<div class="subscribed">
+  <em>
+    Подписаться на
+    <strong> {{ category }}?</strong>
+  </em>
+  <a href="{% url 'newapp.mail:subscribed' category.id %}" class="button button-outline">
+    Подписаться
+  </a>
+</div>
+
+{% endif %}
+
+{% include 'newapp/parts/posts.html' %}
+
+{% endblock content %}

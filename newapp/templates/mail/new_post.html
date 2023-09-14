@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Post</title>
+</head>
+<body>
+
+<h1>
+  New post in your favorite category
+</h1>
+<p>
+  In category
+  <strong>
+  {{category.name}}
+</strong>
+  there is a new post by
+  <strong>
+    {{news.author}}
+  </strong>
+</p>
+<a href="http://127.0.0.1:8000{% url 'newapp:new_detail' news.id %}">
+
+</a>
+</body>
+</html>
