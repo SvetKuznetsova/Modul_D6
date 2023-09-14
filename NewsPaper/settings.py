@@ -40,19 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'allauth',
-   'allauth.account',
-   'allauth.socialaccount',
+    'allauth.account',
+    'allauth.socialaccount',
    # ... здесь нужно указать провайдеры, которые планируете использовать
-   'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.google',
 
     'newapp',
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_filters',
 
+    'newapp.apps.NewappConfig',
+
     'sign',
     'protect',
-    'tascs',
 
 ]
 
@@ -165,3 +166,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 ACCOUNT_FORMS = {'signup': 'sign.forms.BasicSignupForm'}
+
+ADMINS = [
+    ('Skavik', 'skavik46111@gmail.com'),
+    # список всех админов в формате ('имя', 'их почта')
+]
+SERVER_EMAIL = 'peterbadson@yandex.ru'
