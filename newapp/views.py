@@ -104,7 +104,7 @@ class PostCategoryView(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        self.id = resolve(self.request.path_info.kwargs['pk'])
+        self.id = resolve(self.request.path_info).kwargs['pk']
         c = Category.objects.get(id=self.id)
         queryset = Post.objects.filter(category=c)
         return queryset

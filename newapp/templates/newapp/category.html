@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 
 {% block title %}
-News
+Category News
 {% endblock title %}
 
 {% block content %}
@@ -12,7 +12,7 @@ News
     Подписаться на
     <strong> {{ category }}?</strong>
   </em>
-  <a href="{% url 'mail:subscribed' category.id %}" class="button button-outline">
+  <a href="{% url 'newapp:subscribe' category.id %}" class="button button-outline">
     Подписаться
   </a>
 </div>

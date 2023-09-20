@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django_filters',
 
-    'newapp.apps.NewappConfig',
+   # 'newapp.apps.NewappConfig',
 
     'sign',
     'protect',
