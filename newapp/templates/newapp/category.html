@@ -9,8 +9,7 @@
 {% if category.id %}
 <div class="subscribed">
   <em>
-    Подписаться на категорию
-    <strong> {{ category }}?</strong>
+    Подписаться на категорию <strong> {{ category }}?</strong>
    </em>
   <a href="{% url 'newapp:subscribe' category.id %}" class="btn btn-outline-primary">
     Подписаться
@@ -19,12 +18,11 @@
 {% else %}
 <div>
     <em>
-        Отписаться от категории
-        <strong> {{ category }} ? </strong>
+        Отписаться от категории  <strong> {{ category }}? </strong>
             </em>
-<a href = "{% url 'newapp:unsubscribe' category.id %}" class="btn btn-outline-primary" > Отписаться!</a>
+<a href = "{% url 'newapp:unsubscribe' category.id %}" class="btn btn-outline-primary" >
+    Отписаться!</a>
 </div>
-
 {% endif %}
 
 <!-- {% include 'newapp/parts/posts.html' %} -->

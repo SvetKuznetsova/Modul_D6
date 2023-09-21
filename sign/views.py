@@ -7,6 +7,11 @@ from django.contrib.auth.models import User, Group
 from django.views.generic.edit import CreateView
 from .forms import RegisterForm
 
+import logging
+
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
 
 class RegisterView(CreateView):
     model = User

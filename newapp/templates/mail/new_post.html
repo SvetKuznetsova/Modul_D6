@@ -7,19 +7,19 @@
 <body>
 
 <h1>
-  New post in your favorite category
+  Появился новый пост в вашей категории
 </h1>
 <p>
-  In category
+  В категории
   <strong>
   {{category.name}}
 </strong>
-  there is a new post by
+  разместили публикацию
   <strong>
     {{news.author}}
   </strong>
 </p>
-<a href="http://127.0.0.1:8000{% url 'newapp:new_detail' news.id %}">
+<a href="http://127.0.0.1:8000{% url 'newapp:new_detail' news.id %}">Перейти по ссылке
 </a>
 <p>
     {{news.preview}}

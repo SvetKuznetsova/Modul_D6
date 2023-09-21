@@ -75,11 +75,11 @@ News
     {% endfor %}
 </table>
 <a href="{% url 'newapp:new_create' %}" class="btn btn-primary my-3">Добавить новость/статью</a>
+<br>
 {% include 'newapp/parts/paginator.html' %}
 {% else %}
 <!-- Если новостей нет, то сообщаем об этом пользователю  -->
 <h2>Новостей нет</h2>
 {% endif %}
-<div><a href="{% url 'sign:login' %}" class="btn btn-primary my-3">Войти</a>
-<a href="{% url 'sign:logout' %}" class="btn btn-danger my-3">Выйти</a></div>
+
 {% endblock content %}

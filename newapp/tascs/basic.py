@@ -13,7 +13,7 @@ def new_post_subscriptions(instance):
     template = 'mail/new_post.html'
 
     for category in instance.category.all():
-        email_subject = f'New post in category "{category}"'
+        email_subject = f'Новая публикация в категории "{category}"'
         user_emails = get_subscribers(category)
         html = render_to_string(
             template_name=template,
