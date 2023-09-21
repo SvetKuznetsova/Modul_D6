@@ -103,6 +103,7 @@ class PostCategoryView(ListView):
     ordering = ['-dateCreation']  # сортировка по дате в порядке убывания
     paginate_by = 10
 
+
     def get_queryset(self):
         self.id = resolve(self.request.path_info).kwargs['pk']
         c = Category.objects.get(id=self.id)
@@ -114,6 +115,7 @@ class PostCategoryView(ListView):
         user = self.request.user
         category = Category.objects.get(id=self.id)
         subscribed = category.subscribers.filter(email=user.email)
+
         if not subscribed:
             context['category'] = category
         return context
@@ -153,3 +155,13 @@ def unsubscribe_from_category(request, pk):
     if category.subscribers.filter(id=user.id).exists():
         category.subscribers.remove(user)
     return redirect('protect:index')
+
+def CategoryDetailView(request, pk):
+   category = Category.objects.get(pk=pk)
+   is_subscribed = True if len(category.subscribers.filter(id=request.user.id)) else False
+
+   return render(request,'newapp/category.html',
+                 {'category': category,
+                  'is_subscribed' : is_subscribed,
+                  'subscribers': category.subscribers.all()
+                  })
